@@ -1,0 +1,8 @@
+import math
+def Entropy(string,base = 2.0):
+    dct = dict.fromkeys(list(string))
+    pkvec =  [float(string.count(c)) / len(string) for c in dct]
+    E = -sum([pk  * math.log(pk) / math.log(base) for pk in pkvec ])
+    return E
+    
+ print(Entropy("That is great!"))
